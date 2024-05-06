@@ -24,29 +24,32 @@ void board()
 
 bool checkWin(char player)
 {
-	for(int i = 0 ; i < 3; i++)
-	{
-		if(box[i][0] == player && box[i][1] == player && box[i][2]==player || box[0][i] == player && box[1][i] == player && box[2][i] || box[0][0] == player && box[1][1]==player && box[2][2]==player || box[0][2] == player && box[1][1] == player && box[2][2])
-		{
-			return true;
-		}
-	}
-	return false;
+    for (int i = 0; i < 3; i++)
+    {
+        if ((box[i][0] == player && box[i][1] == player && box[i][2] == player) ||
+            (box[0][i] == player && box[1][i] == player && box[2][i] == player) ||
+            (box[0][0] == player && box[1][1] == player && box[2][2] == player) ||
+            (box[0][2] == player && box[1][1] == player && box[2][0] == player))
+        {
+            return true;
+        }
+    }
+    return false;
 }
 
 bool checkTie()
 {
-	for(int i = 0 ; i < 3 ;i++)
-	{
-		for(int j = 0 ; j < 3 ; j++)
-		{
-			if(box[i][j]!='X' &&  box[i][j]!='O')
-			{
-				return false;
-			}
-		}
-	}
-	return true;
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 3; j++)
+        {
+            if (box[i][j] != 'X' && box[i][j] != 'O')
+            {
+                return false;
+            }
+        }
+    }
+    return true;
 }
 
 char randomizeToken()
@@ -115,6 +118,11 @@ int main()
 
 
 	}
+    
+
+	
+	return 0;
+}
     
 
 	
